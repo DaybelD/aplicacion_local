@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "postgres-plugin",
   "unpublishedAction": {
-    "name": "updateCustomerInfo",
+    "name": "getCustomers",
     "datasource": {
       "name": "Users",
       "pluginId": "postgres-plugin",
@@ -13,12 +13,12 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "Page1",
+    "pageId": "Inicio de sesión",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "UPDATE users SET name = '{{NameInput.text}}', email = '{{EmailInput.text}}', country = '{{CountryInput.text}}' WHERE id = {{CustomersTable.selectedRow.id}}",
+      "body": "SELECT * FROM users ORDER BY id LIMIT 20;",
       "pluginSpecifiedTemplates": [
         {
           "value": false
@@ -30,18 +30,13 @@
     "isValid": true,
     "invalids": [],
     "messages": [],
-    "jsonPathKeys": [
-      "CountryInput.text",
-      "CustomersTable.selectedRow.id",
-      "EmailInput.text",
-      "NameInput.text"
-    ],
+    "jsonPathKeys": [],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Page1_updateCustomerInfo",
+  "id": "Inicio de sesión_getCustomers",
   "deleted": false,
-  "gitSyncId": "62b41f08b72ed502c3e66727_62b41f08b72ed502c3e6672c"
+  "gitSyncId": "62b41f08b72ed502c3e66727_62b41f08b72ed502c3e6672b"
 }
